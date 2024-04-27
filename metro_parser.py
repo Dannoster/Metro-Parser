@@ -114,7 +114,7 @@ class MetroParser:
             city_dict = {main_cat : self._subcat_dict}
             final_dict[city] = city_dict
         with open(f'metro-{main_cat}.json', 'w') as file:
-            file.write(json.dumps(final_dict))
+            file.write(json.dumps(final_dict, ensure_ascii=False, indent=4))
         
 def main():
     parser = MetroParser(base_url)
